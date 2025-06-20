@@ -1,6 +1,6 @@
 import java.util.*;
 
-// Product class with id, name, and category
+
 class Product {
     int productId;
     String productName;
@@ -19,17 +19,17 @@ class Product {
 }
 public class Ecommerce {
 
-    // Linear Search by Product Name
+    
     public static Product linearSearch(Product[] products, String targetName) {
         for (Product p : products) {
             if (p.productName.equalsIgnoreCase(targetName)) {
                 return p;
             }
         }
-        return null; // not found
+        return null; 
     }
 
-    // Binary Search by Product Name (requires sorted array)
+    
     public static Product binarySearch(Product[] products, String targetName) {
         int low = 0, high = products.length - 1;
         while (low <= high) {
@@ -40,11 +40,11 @@ public class Ecommerce {
             else if (cmp < 0) low = mid + 1;
             else high = mid - 1;
         }
-        return null; // not found
+        return null; 
     }
 
     public static void main(String[] args) {
-        // Creating a list of products
+    
         Product[] products = {
             new Product(1, "Laptop", "Electronics"),
             new Product(2, "Shoes", "Fashion"),
@@ -53,7 +53,6 @@ public class Ecommerce {
             new Product(5, "Watch", "Accessories")
         };
 
-        // ---------- Linear Search ----------
         System.out.println("=== Linear Search ===");
         String searchKey1 = "Watch";
         Product result1 = linearSearch(products, searchKey1);
@@ -63,8 +62,7 @@ public class Ecommerce {
             System.out.println("Product Not Found");
         }
 
-        // ---------- Binary Search ----------
-        // Sorting the array by product name before binary search
+
         Arrays.sort(products, Comparator.comparing(p -> p.productName.toLowerCase()));
 
         System.out.println("\n=== Binary Search ===");

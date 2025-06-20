@@ -1,9 +1,9 @@
-// Step 2: Define Document Interface
+
 interface Document {
     void open();
 }
 
-// Step 3: Concrete Document Classes
+
 class WordDocument implements Document {
     public void open() {
         System.out.println("Opening Word document...");
@@ -22,7 +22,7 @@ class ExcelDocument implements Document {
     }
 }
 
-// Step 4: Document Factory (Factory Method Pattern)
+
 abstract class DocumentFactory {
     abstract Document createDocument();
 }
@@ -45,7 +45,7 @@ class ExcelDocumentFactory extends DocumentFactory {
     }
 }
 
-// Step 5: Test Class
+
 public class FactoryMethodPatternExample {
     public static void main(String[] args) {
         DocumentFactory wordFactory = new WordDocumentFactory();
